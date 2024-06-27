@@ -1,0 +1,28 @@
+.payment-table-container {
+  background-image: url('https://www.pexels.com/photo/macro-shot-of-wooden-planks-326333/');
+  margin: 20px;
+}
+
+
+.payment-table {
+  width: 100%;
+  border: 1px solid #0d0101;
+}
+
+.payment-table th, .payment-table td {
+  padding: 7px;
+  text-align: left;
+}
+
+.payment-table th {
+  background-color: #937979;
+}
+
+.payment-table tbody tr:nth-child(even) {
+  background-color: #dabcbc;
+}
+
+.icon {
+  margin-right: 5px;
+  vertical-align: middle;
+}

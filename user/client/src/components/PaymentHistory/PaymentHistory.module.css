@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+.div {
+  background-image: url("https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MDQ3NjQ1/website-background-templates.png");
+  background-repeat: repeat-y;
+  background-size: cover;
+  font-family: "Mukta", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  min-height: 100vh;
+}
+
+.ul {
+  list-style: none;
+  width: 50vw;
+  margin: 0vh 25vw;
+  padding: 2vh 6vh;
+  border-radius: 1rem;
+}
+
+.noPayments {
+  color: white;
+  font-family: "Mukta", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  background-color: #77157c;
+  border-radius: 1rem;
+  padding: 30px
+}
+
+.payment {
+  /* box-shadow: 1px 1px 9px #e4d0ff; */
+  background-color: #77157c;
+  box-shadow: 6px 6px 16px #330f39;
+  margin: 1vw;
+  border-radius: 1rem;
+  padding: 15px 30px ;
+  color: white;
+  /* text-align: center; */
+}
+
+.paymentDesc {
+  background-color: #f0d9ff;
+  padding: 0.5rem 0rem 0.5rem 1rem;
+}
+
+.h1 {
+  text-align: center;
+  color: #e4e4e4;
+  padding: 2rem 0rem 0rem 0rem;
+  font-size: 2.7rem;
+}

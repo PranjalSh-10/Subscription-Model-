@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+.div {
+  background-image: url("https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MDQ3NjQ1/website-background-templates.png");
+  background-repeat: repeat-y;
+  background-size: cover;
+  font-family: "Mukta", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  min-height: 100vh;
+  /* text-align: center; */
+}
+
+.planContainer {
+  margin-top: 500px;
+  list-style: none;
+  background-color: #77157c;
+  width: 30vw;
+  /* height: 15vw; */
+  margin: 0vh 35vw;
+  padding: 2vh 6vh; 
+  border-radius: 1rem;
+  box-shadow: 6px 6px 16px #330f39;
+}
+
+.h1 {
+  text-align: center;
+  padding: 2vh 0vh 0vh 0vh;
+  font-size: 2.7rem;
+  color: #f9d7ff;
+}
+
+.content{
+  list-style: none;
+  background-color: #77157c;
+  width: 50vw;
+  margin: 0vh 25vw;
+  padding: 2vh 6vh;
+  border-radius: 1rem;
+  box-shadow: 6px 6px 16px #330f39;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planContainer {
+  margin-top: 100px;
+  /* background-color: rgba(0, 0, 0, 0.7);  */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  color: white;
+} 
+p{
+  margin-bottom: 10px;
+}
+
+.planContainer button{
+  font: inherit;
+  background-color: #9c27b0;
+  border: 1px solid #9c27b0;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,110 @@
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.subscriptions-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.subscriptions-header {
+  color: rgb(247, 246, 248);
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 0 1 calc(25% - 20px); /* Four cards per row */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 280px;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-price {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.card-body {
+  text-align: left;
+  padding: 20px;
+}
+
+.card-detail {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.card-detail i {
+  margin-right: 0px;
+  color: #0070f3;
+}
+
+.card-button {
+  background-color: #ff007f; /* Pink color for the button */
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 20px; 
+}
+
+.card-button:hover {
+  background-color: #cc0066;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    flex: 0 1 calc(33.333% - 20px); /* Three cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 1 calc(50% - 20px); /* Two cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 0 1 100%; /* One card per row on very small screens */
+  }
+}
+
+.Subscription_Page {
+  background-image: url("https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MDQ3NjQ1/website-background-templates.png");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}

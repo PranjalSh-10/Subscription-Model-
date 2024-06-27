@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+.button {
+  font: inherit;
+  background-color: #9c27b0;
+  border: 1px solid #9c27b0;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #761e86;
+  border-color: #ac31c1;
+}
+
+.div {
+  text-align: center;
+  background-image: url("https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MDQ3NjQ1/website-background-templates.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: #eae6eb; */
+  font-family: "Mukta", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  height: 72vh;
+  padding: 15vh 36vw;
+  color: white;
+  margin: -2vh 0vh;
+}
+
+.h1 {
+  font-size: 3.5rem;
+}
+
+.p {
+  font-size: 1.3rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+

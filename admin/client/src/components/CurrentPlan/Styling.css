@@ -1,0 +1,31 @@
+div.table-container {
+  /* background-image: url("https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MDQ3NjQ1/website-background-templates.png");
+  background-size: cover; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column; */
+  margin: 5px;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid #0d0101;
+}
+
+.table th, .payment-table td {
+  padding: 7px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #937979;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #dabcbc;
+}
+
+.icon {
+  margin-right: 5px;
+  vertical-align: middle;
+}

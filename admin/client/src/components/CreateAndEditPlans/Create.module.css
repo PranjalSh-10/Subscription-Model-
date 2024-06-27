@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+.form {
+  padding: 1rem 5rem;
+  width: 40vw;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 7px 7px 17px #313131;
+  font-family: "Mukta", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: rgb(0, 0, 0);
+  font-family: "Mukta", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.form input {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #cccbce70;
+  border: none;
+  border-bottom: 2px solid #494844;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Mukta", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.form button {
+  font: inherit;
+  background-color: #972caa;
+  border: 1px solid #9c27b0;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form button:hover,
+.form button:active {
+  background-color: #761e86;
+  border-color: #ac31c1;
+}
+
+.h1{
+  text-align: center;
+  font-family: "Mukta", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}

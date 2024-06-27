@@ -1,0 +1,179 @@
+
+.container {
+  padding: 10px;
+  text-align: center;
+  background-image: url("https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MDQ3NjQ1/website-background-templates.png");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.link {
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0070f3;
+  border-radius: 5px;
+  margin-bottom: 0px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.link:hover {
+  background-color: #005bb5;
+}
+
+.h2 {
+  color: rgb(11, 4, 18);
+  font-weight: bold;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 25px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 0 1 calc(25% - 20px); /* Four cards per row */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 270px;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.cardBody {
+  text-align: left;
+  padding: 10px;
+}
+
+.cardDetail {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.cardDetail i {
+  margin-right: 8px;
+  color: #3686e2;
+}
+
+.price {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.deleteButton {
+  background-color: #ff007f; 
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 20px;
+}
+
+.deleteButton:hover {
+  background-color: #cc0066;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    flex: 0 1 calc(33.333% - 20px); /* Three cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 1 calc(50% - 20px); /* Two cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 0 1 100%; /* One card per row on very small screens */
+  }
+}
+
+
+
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger div {
+  width: 35px;
+  height: 5px;
+  background-color: rgb(200, 175, 175);
+  margin: 8px 10px;
+  transition: 0.4s;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #6c402d;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 999;
+}
+
+.sidebar a {
+  padding: 40px 18px 20px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #ffffff;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+}
