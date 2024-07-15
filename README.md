@@ -1,1 +1,1 @@
-Subscription Model using MERN Stack and technologies like Material UI, Stripe with Typescript
+Subscription Model using MERN Stack and technologies like MailJet, Stripe with Typescript
