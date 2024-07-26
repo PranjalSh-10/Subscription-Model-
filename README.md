@@ -16,7 +16,8 @@ git clone https://github.com/PranjalSh-10/Subscription-Model-.git
 
 cd Subscription-Model-
 
-<h2>The application has 2 folders, the client and the server.</h2>
+
+<h3>The application has 2 folders, the client and the server. The credentials for admin is set as Email:-'admin@gmail.com' and password:-'123456789' </h3>
 
 ## Client directory
 
@@ -47,4 +48,3 @@ File to check the environment variables required to run the server.
 
 Runs the server on port 5000/7001 or the port mentioned in the env variable.\
 Automatically restarts the server on changes.
-
