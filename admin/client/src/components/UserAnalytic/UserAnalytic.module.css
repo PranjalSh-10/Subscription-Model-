@@ -1,0 +1,126 @@
+.div {
+  margin: 5vh auto;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #0d0101;
+  padding: 12px;
+  text-align: center;
+}
+
+.table th {
+  background-color: #937979;
+  color: white;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #dabcbc;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #937979;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.pagination button:hover {
+  background-color: #724e4e;
+}
+
+.pagination span {
+  margin: 0 10px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  margin: 0vh 10vw;
+}
+
+.form input {
+  display: block;
+  width: 50%;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #755e6070;
+  border: none;
+  border-bottom: 2px solid #494844;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  height: 2rem;
+}
+
+.form select {
+  display: block;
+  width: 20%;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #755e6070;
+  border: none;
+  border-bottom: 2px solid #494844;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  height: 3rem;
+}
+
+.form button {
+  font: inherit;
+  background-color: #844242;
+  border: 1px solid #844242;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 3rem;
+}
+
+.form button:hover,
+.form button:active {
+  background-color: #703d3d;
+  border-color: #844242;
+}
+
+.sortButtonContainer {
+  display: flex;
+  justify-content: flex-end; 
+  margin-bottom: 15px;
+}
+.sortButton{
+  left: auto;
+  background-color: #b06e6e;
+  border-radius: 5px;
+  width: 40px;
+}
+
+.sortImg{
+  height: 17px;
+  width: 25px;
+}

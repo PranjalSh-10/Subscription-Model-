@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
 .form {
   padding: 1rem 5rem;
   width: 40vw;
@@ -17,10 +18,9 @@
   background-image: url("./authBg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-color: #eae6eb; */
   height: 98vh;
-  padding: 4vh 0vh 0vh 0vh ;
-  margin: -2vh 0vh;
+  padding: 4vh 0;
+  margin: -2vh 0;
   font-family: "Mukta", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -67,6 +67,7 @@
 .flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -82,7 +83,6 @@
   top: 0px;
   padding: 1vh;
   color: white;
-  /* font-size: 1.5rem; */
 }
 
 .toastContent {
@@ -94,7 +94,6 @@
   background-color: transparent;
   color: white;
   border-color: transparent;
-  /* padding: 0vw 0vw 0vw 20vw; */
 }
 
 .toastcloseButton:disabled {
@@ -103,9 +102,26 @@
   border-color: transparent;
 }
 
-.link{
-  /* text-decoration: none; */
-  /* padding: 0vh 0vh 0vh 17vw; */
-  /* color: white; */
+.link {
   font-size: 1.1rem;
+  margin-left: 1rem; /* Added margin to separate from button */
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: 80vw;
+    padding: 1rem;
+  }
+
+  .flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .link {
+    margin-left: 0;
+    margin-top: 0.5rem; /* Adjust margin for smaller screens */
+  }
 }

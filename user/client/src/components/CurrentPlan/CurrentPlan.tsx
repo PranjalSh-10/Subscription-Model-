@@ -4,11 +4,16 @@ import { useSendData } from '../../helper/util';
 import classes from './CurrentPlan.module.css';
 import { useNavigate } from 'react-router-dom';
 
+interface IResource {
+  title: string;
+  access: number;
+}
 interface Plan {
   planName: string;
   purchaseDate: string;
   duration: number;
-  remainingResources: number;
+  endDate: string;
+  remainingResources: IResource[];
   remainingDuration: string;
 }
 
@@ -32,9 +37,9 @@ export default function CurrentPlan() {
     fetchCurrentPlan();
   }, []);
 
-  const unsubscribeHandler = async (planName: string = "", leftResources: number = 0) => {
+  const unsubscribeHandler = async (planName: string = "") => {
     try {
-      const resData = await sendData("POST", "unsubscribe", true, { planName: planName, leftResources: leftResources });
+      const resData = await sendData("POST", "unsubscribe", true, { planName: planName});
       await fetchCurrentPlan();
     }
     catch (err) {
@@ -49,15 +54,23 @@ export default function CurrentPlan() {
       {(
         <div className={classes.planContainer}>
           {!currentPlan ? (
-            <h1 style={{ color: "white" }}>Not Subscribed to any Plan</h1>
+            <h1 style={{ color: "#7e2a14" }}>Not Subscribed to any Plan</h1>
           ) : (
             <>
-              <h1 style={{ color: "black" }}>{currentPlan.planName} Plan</h1>
+              <h1 style={{ color: "#7e2a14" }}>{currentPlan.planName} Plan</h1>
               <p>Purchase Date: {currentPlan.purchaseDate}</p>
               <p>Duration: {currentPlan.duration} Months</p>
-              <p>Remaining resources: {currentPlan.remainingResources==-1 ? "Unlimited": currentPlan.remainingResources}</p>
+              <p>Subscription end on: {currentPlan.endDate}</p>
+              {/* <p>Remaining Access: </p>
+              <div>
+                {currentPlan.remainingResources.map((resource, index) => (
+                  <p key={index}>
+                  {resource.access === -1 ? `${resource.title}: Unlimited` : `${resource.title}: ${resource.access}`}
+                  </p>
+                ))}
+              </div> */}
               <p>Remaining duration: {currentPlan.remainingDuration} Days</p>
-              <button onClick={() => unsubscribeHandler(currentPlan.planName, currentPlan.remainingResources)}>Unsubscribe</button>
+              <button onClick={() => unsubscribeHandler(currentPlan.planName)}>Unsubscribe</button>
             </>
           )}</div>
       )}

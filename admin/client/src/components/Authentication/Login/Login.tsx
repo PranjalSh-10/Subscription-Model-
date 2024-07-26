@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import classes from "../Authentication.module.css";
-import { useSendData } from "../../helper/utils";
+import { useSendData } from "../../../helper/util";
 // import { sendData } from "../../../helper/util";
 
 const Login: React.FC = () => {
@@ -17,10 +17,8 @@ const Login: React.FC = () => {
       const data = { email: email, password: password };
       const response = await sendData('POST', 'login', false, data);
 
-      console.log(response);
-
-      if(response.accessToken){
-        localStorage.setItem('token', response.accessToken);
+      if(response.token){
+        localStorage.setItem('token', response.token);
       }
       else{
         throw new Error('Authentication failed');
@@ -29,6 +27,9 @@ const Login: React.FC = () => {
     } catch (err) {
       console.log(err);
     }
+    // if (response) {
+    //   invalidInput = <p>Invalid Email or Password!</p>;
+    // }
   };
 
   return (
@@ -51,15 +52,18 @@ const Login: React.FC = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            minLength={5}
+            minLength={8}
           />
         </div>
         <div className={classes.flex}>
           <div>
             <button type="submit">Login</button>
           </div>
-          <div>
-          </div>
+          {/* <div>
+            <Link to="/register" className={classes.link}>
+              Don't have an account? Create one!
+            </Link>
+          </div> */}
         </div>
       </form>
     </div>

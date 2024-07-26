@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.6",
@@ -21,10 +22,6 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.600.0",
-    "@aws-sdk/s3-request-presigner": "^3.600.0",
-    "@types/bcryptjs": "^2.4.6",
-    "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -32,7 +29,9 @@
     "joi": "^17.13.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.1",
-    "sharp": "^0.33.4",
-    "uuid": "^10.0.0"
+    "node-mailjet": "^6.0.5",
+    "stripe": "^16.1.0",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
   }
 }

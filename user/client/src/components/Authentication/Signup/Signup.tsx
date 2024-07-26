@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import classes from "../Authentication.module.css";
 import { useSendData } from "../../../helper/util";
-// import { sendData } from "../../../helper/util";
 import toast from 'react-hot-toast';
 
 const Signup: React.FC = () => {
@@ -13,7 +12,6 @@ const Signup: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [name, setName] = useState<string>("");
   const navigate = useNavigate();
-  // const [toastContent, settoastContent] = useState("");
   const sendData = useSendData();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -24,34 +22,15 @@ const Signup: React.FC = () => {
       return;
     }
     try {
-      await sendData("POST", "register", false, { email: email, name:name, password: password });
+      await sendData("POST", "register", false, { email, name, password });
       navigate("/login");
-      
     } catch (err) {
       console.log(err);
     }
   };
 
-  // const closeToastHandler = () => {
-  //   settoastContent("");
-  // };
-
   return (
-    <div className={classes.div} style={{height:'98vh'}}>
-      {/* <div className={toastContent !== "" ? classes.toast : undefined}>
-        <div>
-          <p className={classes.toastContent}>{toastContent}</p>
-        </div>
-        <div>
-          <button
-            className={classes.toastcloseButton}
-            disabled={toastContent === "" && true}
-            onClick={closeToastHandler}
-          >
-            X
-          </button>
-        </div>
-      </div> */}
+    <div className={classes.div} style={{ height: '98vh' }}>
       <h2 className={classes.h1}>Signup</h2>
       <form onSubmit={handleSubmit} className={classes.form}>
         {error}
@@ -95,7 +74,12 @@ const Signup: React.FC = () => {
             minLength={8}
           />
         </div>
-        <button type="submit">Signup</button>
+        <div className={classes.flex}>
+          <button type="submit">Signup</button>
+          <Link to="/login" className={classes.link}>
+            Already have an account? Login here!
+          </Link>
+        </div>
       </form>
     </div>
   );

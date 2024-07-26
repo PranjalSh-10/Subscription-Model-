@@ -1,0 +1,144 @@
+.paymentTableContainer {
+  background-image: url('https://www.pexels.com/photo/macro-shot-of-wooden-planks-326333/');
+  margin: 20px;
+  text-align: center;
+}
+
+.paymentTable {
+  width: 100%;
+  border: 1px solid #0d0101;
+}
+
+.paymentTable th, .paymentTable td {
+  padding: 7px;
+  text-align: left;
+}
+
+.paymentTable th {
+  background-color: #937979;
+}
+
+.paymentTable tbody tr:nth-child(even) {
+  background-color: #dabcbc;
+}
+
+.icon {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #937979;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.pagination button:hover {
+  background-color: #724e4e;
+}
+
+.pagination span {
+  margin: 0 10px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0vh 10vw;
+  gap:20px;
+}
+
+.form input {
+  display: block;
+  width: 50%;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #755e6070;
+  border: none;
+  border-bottom: 2px solid #494844;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  height: 3rem;
+  margin-left: 5px;
+}
+
+.form button {
+  font: inherit;
+  background-color: #844242;
+  border: 1px solid #844242;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 1.5rem;
+  height: 3rem;
+}
+
+.form button:hover,
+.form button:active {
+  background-color: #703d3d;
+  border-color: #844242;
+}
+
+.sortButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sortButton {
+  background-color: #b06e6e;
+  border-radius: 5px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.sortImg {
+  height: 17px;
+  width: 25px;
+}
+
+.filterButton {
+  cursor: pointer;
+  width: 30px;
+}
+
+.controlsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+  margin-bottom: 10px;
+  margin: 30px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.filters select, .filters button {
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

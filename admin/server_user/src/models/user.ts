@@ -1,30 +1,65 @@
-import mongoose, { Document, Schema, Model } from 'mongoose';
+import mongoose, {CallbackError, Document} from "mongoose";
+import bcrypt from "bcryptjs";
 
-export interface IUser extends Document {
-  name: string;
-  email: string;
-  password: string;
+export interface IUser extends Document{
+    email: string,
+    name: string,
+    password: string,
+    comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
-const userSchema = new Schema<IUser>({
-  name: {
-    type: String,
-    trim: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-}, {
-  timestamps: true,
-});
+const userSchema = new mongoose.Schema<IUser>({
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        lowercase: true,
+    },
+    name:{
+        type: String,
+        required: true,
+        trim: true,
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+    
+},
+{
+    timestamps: true,
+})
 
-const User: Model<IUser> = mongoose.model<IUser>('User', userSchema);
+
+// hashing password before storing it in db
+userSchema.pre<IUser>('save', async function(next){
+    const user = this;
+
+
+    if(!user.isModified('password')) return next();
+
+    try{
+        const salt = await bcrypt.genSalt(10);
+
+        const hashedPassword = await bcrypt.hash(user.password, salt);
+
+        user.password = hashedPassword;
+
+        next();
+    }
+    catch(err){
+        console.log(err);
+        next(err as CallbackError);
+    }
+})
+
+
+// checks if user entered password matches the password stored in db
+userSchema.methods.comparePassword = async function(candidatePassword:string): Promise<boolean>{
+    return bcrypt.compare(candidatePassword, this.password)
+}
+
+const User = mongoose.model<IUser>('User', userSchema);
+
 export default User;

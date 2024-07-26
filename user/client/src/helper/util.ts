@@ -26,18 +26,19 @@ export function useSendData() {
       });
 
       const data = await response.json();
-      console.log('data received util: ', data);
+      // console.log('data received util: ', data);
 
       if(data.code===401){
-        toast.error('Unathorised Access')
-        return navigate('/login')
+        toast.error(data.message || 'Unathorised Access')
+        navigate('/login')
+        throw new Error(data.message || 'Unauthorised access')
       }
       if (!response.ok) {
         toast.error(data.message || 'An error occurred');
         throw new Error(data.message || 'An error occurred');
       }
 
-      if (data.status === 'ok'&& data.result.message) {
+      if (data.status === 'ok' && data.result.message) {
         toast.success(data.result.message || 'Operation successful');
       }
 

@@ -1,11 +1,10 @@
 import User, { IUser } from "../models/user";
 import { NextFunction, Request, Response } from "express";
-import { registerValidationSchema, loginValidationSchema } from "../validations/schemas";
-import { generateAccessToken } from "../middleware/auth";
+import { generateAccessToken } from "../middlewares/auth";
 import { JwtPayload } from "jsonwebtoken";
-import { CustomError } from "../middleware/error";
-import {success,error} from "../utils/response"
-
+import {success} from "../utils/response"
+import { CustomError } from "../middlewares/error";
+import {sendEmail} from "../mailer"
 
 export const register = async (req: Request, res: Response, next: NextFunction):Promise<Response|void> => {
     try {        
@@ -18,9 +17,20 @@ export const register = async (req: Request, res: Response, next: NextFunction):
 
         const newUser = new User(data);
         const userData: IUser = await newUser.save();
+
+        // EMAIL NOTIFICATION
+
+        const email=data.email;
+        const name=data.name;
+
+        await sendEmail({
+            to: email,
+            subject: 'Welcome to Our Service',
+            text: `Hi ${name}, thank you for registering with us.`
+        });
         
-        // return res.status(201).json({msg: "User created"});
         return res.status(201).json(success(201, {message: "Registration Successful"}));
+
     } 
     catch (err) {
         next(err)
@@ -29,17 +39,18 @@ export const register = async (req: Request, res: Response, next: NextFunction):
 
 export const login = async (req: Request, res:Response, next:NextFunction):Promise<Response|void> => {
     try{
-        // joi validation
-        const {error} = loginValidationSchema.validate(req.body);
-        if (error) {
-            return next({status: 400, message: error.details[0].message})
-        }
-
         const{email,password} = req.body;
 
         const user = await User.findOne<IUser>({ email });
-        if (!user || !(await user.comparePassword(password))){
-            return next({status: 400, message: "Incorrect email or password"})
+        if (!user){
+            const err:CustomError = new Error('User not registered');
+            err.status = 401;
+            return next(err);
+        }
+        if(!(await user.comparePassword(password))){
+            const err:CustomError = new Error('Incorrect email or password');
+            err.status = 400;
+            return next(err);
         }
 
         const payload:JwtPayload={
@@ -49,7 +60,6 @@ export const login = async (req: Request, res:Response, next:NextFunction):Promi
 
         const accessToken:string = generateAccessToken(payload);
         
-        // return res.status(200).json({token: accessToken});
         return res.status(200).json(success(200, { token: accessToken ,message:"Login Successful"}));
     } 
     catch (error) {

@@ -1,20 +1,52 @@
-import mongoose, { Document, Schema } from 'mongoose';
-import { IUser } from './user';
-import { IPlan } from './plan';
+import mongoose, { Document } from "mongoose";
+import { IUser } from "./user";
+import { IPlan } from "./plan";
 
-export interface ISubscription extends Document {
-    userId: mongoose.Types.ObjectId | IUser;
-    planId: mongoose.Types.ObjectId | IPlan;
-    startDate: Date;
-    endDate: Date;
+export interface ITransaction extends Document{
+    userId: mongoose.Types.ObjectId | IUser,
+    planId: mongoose.Types.ObjectId | IPlan,
+    paymentIntentId: string,
+    amount: number,
+    paymentMethod: string,
+    status: string,
+    receipt: string,
 }
 
-const subscriptionSchema = new Schema<ISubscription>({
-    userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-    planId: { type: Schema.Types.ObjectId, ref: 'Plan', required: true },
-    startDate: { type: Date, required: true },
-    endDate: { type: Date, required: true },
-}, { timestamps: true });
+const transactionSchema = new mongoose.Schema<ITransaction>({
+    userId:{
+        type: mongoose.Types.ObjectId,
+        required: true,
+        ref: 'User',
+    },
+    planId: {
+        type: mongoose.Types.ObjectId,
+        required: true,
+        ref: 'Plan',
+    },
+    paymentIntentId: {
+        type: String,
+        required: true,
+    },
+    amount: {
+        type: Number,
+        required: true,
+    },
+    paymentMethod:{
+        type: String,
+        default: 'card',
+    },
+    status:{
+        type: String,
+        required: true,
+    },
+    receipt: {
+        type: String,
+        default: '',
+    }
+},{
+    timestamps: true,
+})
 
-const Subscription = mongoose.model<ISubscription>('Transaction', subscriptionSchema);
-export default Subscription;
+const Transaction = mongoose.model<ITransaction>('Transaction', transactionSchema);
+
+export default Transaction;

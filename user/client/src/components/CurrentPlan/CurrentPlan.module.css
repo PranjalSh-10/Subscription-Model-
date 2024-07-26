@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
 
 .div {
-  background-image: url("https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MDQ3NjQ1/website-background-templates.png");
+  background-color: #efe3e3;
   background-repeat: repeat-y;
   background-size: cover;
   font-family: "Mukta", sans-serif;
@@ -14,7 +14,7 @@
 .planContainer {
   margin-top: 500px;
   list-style: none;
-  background-color: #77157c;
+  background-color: #f49279;
   width: 30vw;
   /* height: 15vw; */
   margin: 0vh 35vw;
@@ -25,9 +25,10 @@
 
 .h1 {
   text-align: center;
-  padding: 2vh 0vh 0vh 0vh;
+  color: #7e2a14;
+  color: black;
+  padding: 2.5rem 0rem 0rem 0rem;
   font-size: 2.7rem;
-  color: #f9d7ff;
 }
 
 .content{
@@ -45,12 +46,12 @@
 }
 
 .planContainer {
-  margin-top: 100px;
+  margin-top: 35px;
   /* background-color: rgba(0, 0, 0, 0.7);  */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 8px #330f39;
   font-size: 1.2em;
   color: white;
 } 
@@ -60,8 +61,10 @@ p{
 
 .planContainer button{
   font: inherit;
-  background-color: #9c27b0;
-  border: 1px solid #9c27b0;
+  /* background-color: #9c27b0;
+  border: 1px solid #9c27b0; */
+  background-color: #b45841;
+  border: 1px solid #b45841;
   color: #ffffff;
   padding: 0.5rem 1.5rem;
   border-radius: 4px;

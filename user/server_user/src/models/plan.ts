@@ -1,4 +1,5 @@
 import mongoose, { Document } from "mongoose";
+import { IResourceGrp } from "./resourceGrp";
 
 export interface IPlan extends Document {
     name: string,
@@ -6,13 +7,14 @@ export interface IPlan extends Document {
     resources: number,
     price: number,
     duration: number,
+    grpId: mongoose.Types.ObjectId | IResourceGrp,
 }
 
 const planSchema = new mongoose.Schema<IPlan>({
     name: {
         type: String,
         required: true,
-        default: "free",
+        // default: "Free",
         unique: true,
         trim: true,
     },
@@ -35,6 +37,11 @@ const planSchema = new mongoose.Schema<IPlan>({
         type: String,
         // required: true,
     },
+    grpId: {
+        type: mongoose.Types.ObjectId,
+        required: true,
+        ref: 'ResourceGrp',
+    }
 }, {
     timestamps: true,
 })

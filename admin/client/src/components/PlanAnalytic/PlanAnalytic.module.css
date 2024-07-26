@@ -1,0 +1,76 @@
+.div {
+  border: 1px solid #0d0101;
+  text-align: center;
+  margin: 5vh 10vw;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #0d0101;
+  padding: 10px;
+}
+
+.table th {
+  background-color: #937979;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #dabcbc;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap; /* Add this line to allow wrapping */
+}
+
+@media (max-width: 1200px) {
+  .div {
+    margin: 5vh 5vw;
+  }
+
+  .box {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .div {
+    margin: 5vh 2vw;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+  }
+
+  .box {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .div {
+    margin: 5vh 1vw;
+  }
+
+  .table th,
+  .table td {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .box {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

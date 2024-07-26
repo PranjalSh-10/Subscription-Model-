@@ -1,0 +1,74 @@
+/* Navbar.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #f49279;
+  --secondary-color: #ffffff;
+  --font-color: #b81782;
+  --font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: var(--font-color);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .navLinks li {
+    width: 100%;
+  }
+
+  .navLinks li a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,215 @@
+.container {
+  padding: 10px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  background-color: #efe3e3;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.link {
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: #f49279;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.link:hover {
+  background-color: #005bb5;
+}
+
+.h2 {
+  color: #0b0412;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 20px;
+  margin: 0;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1 1 calc(30% - 20px);
+  max-width: 300px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.header {
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.cardBody {
+  text-align: left;
+  padding: 10px;
+}
+
+.cardDetail {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.cardDetail i {
+  margin-right: 8px;
+  color: #3686e2;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.editButton,
+.deleteButton {
+  text-decoration: none;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.editButton {
+  margin-right: 10px;
+}
+
+.editButton:hover {
+  background-color: #005bb5;
+}
+
+.deleteButton {
+  background-color: #ff007f;
+}
+
+.deleteButton:hover {
+  background-color: #cc0066;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger div {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f49279;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.resource{
+  cursor: pointer;
+  color: rgb(102, 102, 236);
+  text-decoration: underline;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.resource:hover{
+  color: darkblue;
+  text-decoration: none;
+}

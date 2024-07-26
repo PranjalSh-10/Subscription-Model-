@@ -31,5 +31,5 @@ File to check the environment variables required to run the server.
 
 ### `npm start`
 
-Runs the server on port 5000 or the port mentioned in the env variable.\
+Runs the server on port 5000/7001 or the port mentioned in the env variable.\
 Automatically restarts the server on changes.
